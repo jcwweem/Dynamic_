@@ -1,0 +1,23 @@
+13:32:18 **** Incremental Build of configuration Debug for project projectsolar ****
+make -j4 all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\workspace\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/workspace/projectsolar/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/workspace/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: projectsolar.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32L432KCUx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "projectsolar.elf" @"objects.list"   -lm
+Finished building target: projectsolar.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "projectsolar.elf" "projectsolar.bin"
+arm-none-eabi-size "projectsolar.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18384	    376	   6392	  25152	   6240	projectsolar.elf
+ 
+
+13:32:24 Build Finished (took 5s.632ms)
+
