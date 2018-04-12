@@ -7,6 +7,9 @@
 
 #include "adc.h"
 
+/*
+ * This code is generated using STM32CUBEX
+ */
 void ADC_initialiseADC(){
 
 	  ADC_ChannelConfTypeDef sConfig;
@@ -14,15 +17,15 @@ void ADC_initialiseADC(){
 	    /**Common config
 	    */
 	  hadc1.Instance = ADC1;
-	  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV2;
+	  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV2;					//sets the prescaler to 2, the ADC would present glitches if this wasn'tt applied
 	  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
 	  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-	  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-	  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+	  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;						//
+	  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;					//
 	  hadc1.Init.LowPowerAutoWait = DISABLE;
-	  hadc1.Init.ContinuousConvMode = ENABLE;
+	  hadc1.Init.ContinuousConvMode = ENABLE;							//
 	  hadc1.Init.NbrOfConversion = 3;
-	  hadc1.Init.DiscontinuousConvMode = DISABLE;
+	  hadc1.Init.DiscontinuousConvMode = DISABLE;						//
 	  hadc1.Init.NbrOfDiscConversion = 1;
 	  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
 	  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
@@ -70,16 +73,16 @@ void ADC_initialiseADC(){
 }
 
 void ADC_getADC(uint32_t* channel1, uint32_t* channel2, uint32_t* channel3){
-	HAL_ADC_Start(&hadc1);
+	HAL_ADC_Start(&hadc1);									//starts the ADC
 
-	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); //get the value for the first channel
+	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); 	//get the value from the first channel
 	*channel1 = HAL_ADC_GetValue(&hadc1);
 
-	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); //get the value for the second channel
+	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); 	//get the value from the second channel
 	*channel2 = HAL_ADC_GetValue(&hadc1);
 
-	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); //get the value for the third channel
+	while(HAL_ADC_PollForConversion(&hadc1,0) != HAL_OK); 	//get the value from the third channel
 	*channel3 = HAL_ADC_GetValue(&hadc1);
 
-	HAL_ADC_Stop(&hadc1);
+	HAL_ADC_Stop(&hadc1);									//stops the ADC
 }

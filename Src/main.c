@@ -17,26 +17,17 @@ uint32_t a, b, c;
 
 int main(void)
 {
-  HAL_Init();
-  SystemClock_Config();
+	HAL_Init(); 				//initialises the HAL
 
-  gpio_initialiseGPIO();
-  DAC_initialiseDAC();
-  ADC_initialiseADC();
+	SystemClock_Config();		//initialises the Clock
+
+	gpio_initialiseGPIO();		//initialises the GPIO
+	DAC_initialiseDAC();		//initialises the DAC
+	ADC_initialiseADC();		//initialises the ADC
 
 	while(1)
 	{
 
 	}
 
-}
-
-void _Error_Handler(char *file, int line)
-{
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  while(1)
-  {
-  }
-  /* USER CODE END Error_Handler_Debug */
 }

@@ -20,14 +20,14 @@ void DAC_initialiseDAC(){
 	}
 
 	//DAC channel OUT1 config
-	sConfig.DAC_SampleAndHold = DAC_SAMPLEANDHOLD_DISABLE;	//disables sampleandhold
-	sConfig.DAC_Trigger = DAC_TRIGGER_NONE;					//disables external/internal triggers
-	sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;		//enables the outputbuffer
-	sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_DISABLE;	//is not connected to on chip periph
-	sConfig.DAC_UserTrimming = DAC_TRIMMING_FACTORY;		//Sets trimming to factory settings
-	if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK) //configs the DAC channel
+	sConfig.DAC_SampleAndHold = DAC_SAMPLEANDHOLD_DISABLE;					//disables sampleandhold
+	sConfig.DAC_Trigger = DAC_TRIGGER_NONE;									//disables external/internal triggers
+	sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;						//enables the outputbuffer
+	sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_DISABLE;
+	sConfig.DAC_UserTrimming = DAC_TRIMMING_FACTORY;
+	if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK)
 	{
-		while(1);
+		while(1); //error
 	}
 
 	HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
