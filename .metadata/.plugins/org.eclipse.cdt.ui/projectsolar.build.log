@@ -1,10 +1,58 @@
-13:32:18 **** Incremental Build of configuration Debug for project projectsolar ****
+11:44:02 **** Incremental Build of configuration Debug for project projectsolar ****
 make -j4 all 
 Building file: ../Src/main.c
+Building file: ../Src/usb_device.c
 Invoking: MCU GCC Compiler
-C:\Users\Joepi\workspace\projectsolar\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/workspace/projectsolar/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/workspace/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/workspace/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usb_device.d" -MT"Src/usb_device.o" -o "Src/usb_device.o" "../Src/usb_device.c"
+Building file: ../Src/usbd_cdc_if.c
+Building file: ../Src/usbd_conf.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usbd_cdc_if.d" -MT"Src/usbd_cdc_if.o" -o "Src/usbd_cdc_if.o" "../Src/usbd_cdc_if.c"
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usbd_conf.d" -MT"Src/usbd_conf.o" -o "Src/usbd_conf.o" "../Src/usbd_conf.c"
 Finished building: ../Src/main.c
+Finished building: ../Src/usb_device.c
+Finished building: ../Src/usbd_cdc_if.c
+Finished building: ../Src/usbd_conf.c
+ 
+ 
+ 
+ 
+Building file: ../Src/usbd_desc.c
+Building file: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/usbd_desc.d" -MT"Src/usbd_desc.o" -o "Src/usbd_desc.o" "../Src/usbd_desc.c"
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c"
+Building file: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
+Building file: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c"
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c"
+Finished building: ../Src/usbd_desc.c
+Finished building: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
+Finished building: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
+Finished building: ../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
+ 
+ 
+ 
+ 
+Building file: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
+Invoking: MCU GCC Compiler
+C:\Users\Joepi\Desktop\GIT\projectsolar\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32L432xx -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/Joepi/Desktop/GIT/projectsolar/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o" -o "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o" "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c"
+Finished building: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
  
 Building target: projectsolar.elf
 Invoking: MCU GCC Linker
@@ -16,8 +64,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "projectsolar.elf" "projectsolar.bin"
 arm-none-eabi-size "projectsolar.elf"
    text	   data	    bss	    dec	    hex	filename
-  18384	    376	   6392	  25152	   6240	projectsolar.elf
+  14368	     24	   2776	  17168	   4310	projectsolar.elf
  
 
-13:32:24 Build Finished (took 5s.632ms)
+11:44:13 Build Finished (took 11s.46ms)
 

@@ -1,0 +1,13 @@
+/*
+ * systemClock.h
+ *
+ *  Created on: Apr 11, 2018
+ *      Author: Joepi
+ */
+
+#ifndef SYSTEMCLOCK_H_
+#define SYSTEMCLOCK_H_
+
+void SystemClock_Config(void);
+
+#endif /* SYSTEMCLOCK_H_ */

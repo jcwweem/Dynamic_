@@ -1,0 +1,61 @@
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  ******************************************************************************
+  */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "stm32l4xx_hal.h"
+#include "usb_device.h"
+
+#include "measurement.h"
+#include "gpio.h"
+#include "systemClock.h"
+
+uint32_t a, b, c;
+
+int main(void)
+{
+  HAL_Init();
+
+  SystemClock_Config();
+
+  gpio_initialiseGPIO();
+  DAC_initialiseDAC();
+  ADC_initialiseADC();
+//  MX_USB_DEVICE_Init();
+
+  uint16_t memes = 0;
+
+	while(1)
+	{
+		/* USER CODE END WHILE */
+		ADC_getADC(&a, &b, &c);
+//		for(uint32_t i = 0; i < 0xFFF; i++)
+//		{
+//			DAC_setDAC(i);
+//		}
+//		gpio_setGPIO(PB0, memes);
+//		gpio_setGPIO(PB3, memes);
+//		gpio_setGPIO(PB6, memes);
+//		gpio_setGPIO(PB7, memes);
+//		gpio_setGPIO(PA2, memes);
+//		gpio_setGPIO(PA5, memes);
+//		gpio_setGPIO(PA6, memes);
+//		gpio_setGPIO(PA7, memes);
+		memes++;
+	}
+
+}
+
+void _Error_Handler(char *file, int line)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  while(1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}

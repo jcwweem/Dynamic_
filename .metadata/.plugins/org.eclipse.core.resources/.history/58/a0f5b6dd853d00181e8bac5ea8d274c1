@@ -1,0 +1,17 @@
+/*
+ * gpio.h
+ *
+ *  Created on: Apr 11, 2018
+ *      Author: Joepi
+ */
+
+#ifndef GPIO_H_
+#define GPIO_H_
+
+#include "stm32l4xx_hal.h"
+
+	void gpio_initialiseGPIO(void);
+
+	void gpio_setGPIO(int pinNr, bool_ )
+
+#endif /* GPIO_H_ */
