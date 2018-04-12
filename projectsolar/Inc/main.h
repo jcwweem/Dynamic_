@@ -65,7 +65,6 @@
 #define current_GPIO_Port GPIOA
 #define high_Voltage_Pin GPIO_PIN_3
 #define high_Voltage_GPIO_Port GPIOA
-
 /* ########################## Assert Selection ############################## */
 /**
   * @brief Uncomment the line below to expanse the "assert_param" macro in the 

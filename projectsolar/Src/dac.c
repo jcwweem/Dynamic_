@@ -29,6 +29,8 @@ void DAC_initialiseDAC(){
 	{
 		while(1);
 	}
+
+	HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
 }
 
 void DAC_setDAC(uint32_t voltage){
