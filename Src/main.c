@@ -25,6 +25,8 @@ int main(void)
 	DAC_initialiseDAC();		//initialises the DAC
 	ADC_initialiseADC();		//initialises the ADC
 
+	initShiftregister(); 		//initialises the shiftregister
+
 	while(1)
 	{
 

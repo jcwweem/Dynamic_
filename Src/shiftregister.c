@@ -16,7 +16,7 @@
 int amountOfCells = 0;
 int* bitsArray;
 
-void initShiftregister() //initialize the shiftregister
+void initShiftregister() //initialize shiftregister
 {
 	//initGpio
 	gpio_initialiseGPIO();
@@ -26,9 +26,10 @@ void initShiftregister() //initialize the shiftregister
 	int newbitsArray[amountOfCells];
 	bitsArray = & newbitsArray[amountOfCells];
 
-	for(int i = 0; i < amountOfCells; i++)//fill entire array with zeros // dit moet nog aangepast worden
+	//fill entire array. Value: 0xFAA(not in circuit)
+	for(int i = 0; i < amountOfCells; i++)
 	{
-		bitsArray[i] = 0x0;
+		bitsArray[i] = 0xFAA;
 	}
 }
 
@@ -57,7 +58,7 @@ void shift_measureAt(int index)
 		if(i == index)
 		{
 			//put cell on measureline
-			shift1Cell(0xF55);
+			shift1Cell(0x0AA);
 		}
 		else
 		{
@@ -67,7 +68,7 @@ void shift_measureAt(int index)
 	}
 }
 
-void shift1Cell(int waarde)//als waarde een hexadecimaal getalvan 12 bits
+void shift1Cell(int waarde)//als waarde een hexadecimaal getal van 12 bits
 {
 	//shift hier 12 bits
 	for(int i = 0; i < 12; i++)
@@ -78,11 +79,13 @@ void shift1Cell(int waarde)//als waarde een hexadecimaal getalvan 12 bits
 
 void shift1Bit(int bit)
 {
+	//make sure clock is low
+	gpio_setGPIO(PB7, 0);
 	//set Data
-	gpio_setGPIO("PB6", bit);
+	gpio_setGPIO(PB6, bit);
 	//clock pulse
-	gpio_setGPIO("PB7", 1);
-	gpio_setGPIO("PB7", 0);
+	gpio_setGPIO(PB7, 1);
+	gpio_setGPIO(PB7, 0);
 }
 
 void initAmountOfCells()
@@ -92,7 +95,7 @@ void initAmountOfCells()
 			//measures the cell
 			if(measureCel(i) <= referenceValue)			//if the value is less then the lowest value possible
 			{
-				amountOfCells = i;						//return the current index
+				amountOfCells = i+1;					//return the current index
 			}
 		}
 }
@@ -100,20 +103,22 @@ void initAmountOfCells()
 /*
  * Waarde van integers die gestuurd moeten worden bij bepaalde acties:
  *
- * Cel naar lijn 1:
- * 		000001010110 	0x056
+ * Cell naar lijn 1:
+ * 		1111 1010 1001		0xFA9
  *
- * Cel naar lijn 2:
- * 		000001011001	0x059
+ * Cell naar lijn 2:
+ * 		1111 1010 0110		0xFA6
  *
- * Cel naar lijn 3:
- * 		000001100101	0x065
+ * Cell naar lijn 3:
+ * 		1111 1001 1010		0xF9A
  *
- * Cel naar lijn 4:
- * 		000010010101	0x095
+ * Cell naar lijn 4:
+ * 		1111 0110 1010		0xF6A
  *
- * Cel meten:
- * 		111101010101	0xF55
+ * Cell meten:
+ * 		0000 1010 1010		0x0AA
  *
- */
+ * Cell los:
+ * 		1111 1010 1010		0xFAA
+ *
  */
