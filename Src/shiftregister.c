@@ -13,7 +13,7 @@
 #include "gpio.h"
 #include "measurement.h"
 
-int amountOfCells = 0;
+int amountOfCells = 1;
 int* bitsArray;
 
 void initShiftregister() //initialize shiftregister
@@ -22,15 +22,41 @@ void initShiftregister() //initialize shiftregister
 	gpio_initialiseGPIO();
 
 	//initCell
-	initAmountOfCells();
+//	initAmountOfCells();
 	int newbitsArray[amountOfCells];
 	bitsArray = & newbitsArray[amountOfCells];
 
 	//fill entire array. Value: 0xFAA(not in circuit)
 	for(int i = 0; i < amountOfCells; i++)
 	{
-		bitsArray[i] = 0xFAA;
+		bitsArray[i] = 0xE38;
 	}
+}
+
+void shift_writeCellsTest(int waarde)
+{
+	gpio_setGPIO(PB0, 0); //set enable to 0
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
+
+	//write all cells
+	for(int i = 0; i < amountOfCells; i++)
+	{
+		shift1Cell(waarde);
+	}
+
+	gpio_setGPIO(PB0, 1);//set enable to 1
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
+	gpio_setGPIO(PB0, 0);//set enable to 0
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
 }
 
 void measureAllCells(int* array) //measure all cells and return an int array
@@ -73,7 +99,7 @@ void shift1Cell(int waarde)//als waarde een hexadecimaal getal van 12 bits
 	//shift hier 12 bits
 	for(int i = 0; i < 12; i++)
 	{
-		shift1Bit((0x1 << i) && waarde); //select bit to be shifted
+		shift1Bit((((0x1 << i)) & waarde) >> i); //select bit to be shifted
 	}
 }
 
@@ -81,11 +107,27 @@ void shift1Bit(int bit)
 {
 	//make sure clock is low
 	gpio_setGPIO(PB7, 0);
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
 	//set Data
 	gpio_setGPIO(PB6, bit);
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
 	//clock pulse
 	gpio_setGPIO(PB7, 1);
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
 	gpio_setGPIO(PB7, 0);
+	for(int i = 0; i<40000; i++)
+		{
+			asm("NOP");
+		}
 }
 
 void initAmountOfCells()
