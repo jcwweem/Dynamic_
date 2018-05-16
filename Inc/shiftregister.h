@@ -10,6 +10,8 @@
 
 void initShiftregister();
 
+void shift_writeCellsTest(int waarde);
+
 void measureAllCells(int* array);
 
 void shift_measureAt(int index);
