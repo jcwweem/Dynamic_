@@ -16,7 +16,8 @@
 int amountOfCells = 1;
 int* bitsArray;
 
-void initShiftregister() //initialize shiftregister
+//initialize shiftregister
+void initShiftregister()
 {
 	//initGpio
 	gpio_initialiseGPIO();
@@ -33,35 +34,35 @@ void initShiftregister() //initialize shiftregister
 	}
 }
 
-void shift_writeCellsTest(int waarde)
+//A test where the given value is passed into all cells
+void shift_writeCellsTest(int value)
 {
-	gpio_setGPIO(PB0, 0); //set enable to 0
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	//set enable to 0
+	gpio_setGPIO(PB0, 0);
+	delay();
 
 	//write all cells
 	for(int i = 0; i < amountOfCells; i++)
 	{
-		shift1Cell(waarde);
+		shift1Cell(value);
 	}
 
-	gpio_setGPIO(PB0, 1);//set enable to 1
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
-	gpio_setGPIO(PB0, 0);//set enable to 0
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	//set enable to 1
+	gpio_setGPIO(PB0, 1);
+	delay();
+
+	//set enable to 0
+	gpio_setGPIO(PB0, 0);
+	delay();
 }
 
-void measureAllCells(int* array) //measure all cells and return an int array
+//measures all cells and returns an int array
+void measureAllCells(int* array)
 {
+	//create a temp array
 	int measureArray[amountOfCells];
+
+	//loop through all cells
 	for(int i = 0; i < amountOfCells; i++)
 	{
 		//set this cell to be measured
@@ -70,12 +71,15 @@ void measureAllCells(int* array) //measure all cells and return an int array
 		//measure cell and add it to array
 		measureArray[i] = measureCel(i);
 	}
+
+	//update array with temparray
 	array = measureArray;
 
 	//put circuit back in old state
 	shift_measureAt(100000); //by setting this to an insane amount the circuit is put back together
 }
 
+//measure at 1 cell, the one measured is given by index
 void shift_measureAt(int index)
 {
 	//amount of cells x 12
@@ -94,42 +98,35 @@ void shift_measureAt(int index)
 	}
 }
 
-void shift1Cell(int waarde)//als waarde een hexadecimaal getal van 12 bits
+//shift 1 cell(12bits) into the shift register, value is a hexadecimal number
+void shift1Cell(int value)
 {
-	//shift hier 12 bits
+	//shift 12bits
 	for(int i = 0; i < 12; i++)
 	{
-		shift1Bit((((0x1 << i)) & waarde) >> i); //select bit to be shifted
+		//select bit to be shifted
+		shift1Bit((((0x1 << i)) & value) >> i);
 	}
 }
 
+//shift 1 bit into shift register
 void shift1Bit(int bit)
 {
 	//make sure clock is low
 	gpio_setGPIO(PB7, 0);
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	delay();
 	//set Data
 	gpio_setGPIO(PB6, bit);
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	delay();
 	//clock pulse
 	gpio_setGPIO(PB7, 1);
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	delay();
+	//make sure clock is low again
 	gpio_setGPIO(PB7, 0);
-	for(int i = 0; i<40000; i++)
-		{
-			asm("NOP");
-		}
+	delay();
 }
 
+//initialises the amount of cells present in our circuit
 void initAmountOfCells()
 {
 	for (int i = 0; i < maxNrOfCells; i++)
@@ -141,6 +138,16 @@ void initAmountOfCells()
 			}
 		}
 }
+
+//delay function
+void delay()
+{
+	for(int i = 0; i<40000; i++)
+	{
+		asm("NOP");
+	}
+}
+
 
 /*
  * Waarde van integers die gestuurd moeten worden bij bepaalde acties:
